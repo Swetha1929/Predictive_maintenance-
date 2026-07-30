@@ -10,6 +10,7 @@ st.set_page_config(page_title="Engine Condition Prediction", layout="wide")
 st.title("Engine Condition Prediction App")
 st.write("Enter the feature values below and click Predict.")
 
+
 @st.cache_resource
 def load_artifacts():
     model_path = hf_hub_download(repo_id=REPO_ID, filename="best_model.pkl")
@@ -29,6 +30,7 @@ def load_artifacts():
         model_info = {}
 
     return model, feature_names, model_info
+
 
 try:
     model, feature_names, model_info = load_artifacts()
